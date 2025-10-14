@@ -1,7 +1,6 @@
 import asyncio
 import time
 
-
 from cli_base.cli_tools.verbosity import setup_logging
 from cli_base.tyro_commands import TyroVerbosityArgType
 from rich import print  # noqa
