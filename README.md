@@ -146,6 +146,7 @@ test print data in terminal looks like:
 [comment]: <> (✂✂✂ auto generated history start ✂✂✂)
 
 * [**dev**](https://github.com/jedie/tc66c2mqtt/compare/v0.4.1...main)
+  * 2025-10-14 - Add PyCharm run config
   * 2025-10-14 - Update README
   * 2025-10-14 - fix code style
   * 2025-10-14 - Update requirements
