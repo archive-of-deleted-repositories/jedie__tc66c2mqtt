@@ -89,8 +89,8 @@ Output looks like:
 [comment]: <> (✂✂✂ auto generated dev help start ✂✂✂)
 ```
 usage: ./dev-cli.py [-h]
-                    {check-code-style,coverage,fix-code-style,install,mypy,nox,pip-audit,publish,test,update,update-te
-st-snapshot-files,version}
+                    {coverage,install,lint,mypy,nox,pip-audit,publish,test,update,update-readme-history,update-test-sn
+apshot-files,version}
 
 
 
@@ -98,20 +98,23 @@ st-snapshot-files,version}
 │ -h, --help        show this help message and exit                                                                  │
 ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
 ╭─ subcommands ──────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ {check-code-style,coverage,fix-code-style,install,mypy,nox,pip-audit,publish,test,update,update-test-snapshot-file │
-│ s,version}                                                                                                         │
-│     check-code-style                                                                                               │
-│                   Check code style by calling darker + flake8                                                      │
+│ {coverage,install,lint,mypy,nox,pip-audit,publish,test,update,update-readme-history,update-test-snapshot-files,ver │
+│ sion}                                                                                                              │
 │     coverage      Run tests and show coverage report.                                                              │
-│     fix-code-style                                                                                                 │
-│                   Fix code style of all tc66c2mqtt source code files via darker                                    │
 │     install       Install requirements and 'tc66c2mqtt' via pip as editable.                                       │
+│     lint          Check/fix code style by run: "ruff check --fix"                                                  │
 │     mypy          Run Mypy (configured in pyproject.toml)                                                          │
 │     nox           Run nox                                                                                          │
 │     pip-audit     Run pip-audit check against current requirements files                                           │
 │     publish       Build and upload this project to PyPi                                                            │
 │     test          Run unittests                                                                                    │
-│     update        Update "requirements*.txt" dependencies files                                                    │
+│     update        Update dependencies (uv.lock) and git pre-commit hooks                                           │
+│     update-readme-history                                                                                          │
+│                   Update project history base on git commits/tags in README.md Will be exited with 1 if the        │
+│                   README.md was updated otherwise with 0.                                                          │
+│                                                                                                                    │
+│                   Also, callable via e.g.:                                                                         │
+│                       python -m cli_base update-readme-history -v                                                  │
 │     update-test-snapshot-files                                                                                     │
 │                   Update all test snapshot files (by remove and recreate all snapshot files)                       │
 │     version       Print version and exit                                                                           │
@@ -142,6 +145,12 @@ test print data in terminal looks like:
 
 [comment]: <> (✂✂✂ auto generated history start ✂✂✂)
 
+* [**dev**](https://github.com/jedie/tc66c2mqtt/compare/v0.4.1...main)
+  * 2025-10-14 - Add PyCharm run config
+  * 2025-10-14 - Update README
+  * 2025-10-14 - fix code style
+  * 2025-10-14 - Update requirements
+  * 2025-10-14 - Apply manageprojects updates
 * [v0.4.1](https://github.com/jedie/tc66c2mqtt/compare/v0.4.0...v0.4.1)
   * 2025-04-21 - Set min/max validation values in MQTT components of ha-services
 * [v0.4.0](https://github.com/jedie/tc66c2mqtt/compare/v0.3.0...v0.4.0)
@@ -153,15 +162,15 @@ test print data in terminal looks like:
   * 2024-06-13 - typo: Not "Delta" it's "Data" voltage ;)
 * [v0.3.0](https://github.com/jedie/tc66c2mqtt/compare/v0.2.0...v0.3.0)
   * 2024-06-12 - Expose Delta +/i and temperatur via MQTT, too.
+
+<details><summary>Expand older history entries ...</summary>
+
 * [v0.2.0](https://github.com/jedie/tc66c2mqtt/compare/v0.1.1...v0.2.0)
   * 2024-06-10 - Use Kaitai Struct and expose group Ah/Wh to MQTT add write command
   * 2024-06-10 - Fix some typos
   * 2024-05-31 - Update requirements
   * 2024-05-31 - print device info
   * 2024-05-15 - Simplify parsing TC66 data
-
-<details><summary>Expand older history entries ...</summary>
-
 * [v0.1.1](https://github.com/jedie/tc66c2mqtt/compare/v0.1.0...v0.1.1)
   * 2024-05-15 - README
   * 2024-05-15 - Update README.md

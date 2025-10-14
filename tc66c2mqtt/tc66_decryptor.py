@@ -1,5 +1,7 @@
-from Crypto.Cipher import AES
 import logging
+
+from Crypto.Cipher import AES
+
 
 logger = logging.getLogger(__name__)
 
